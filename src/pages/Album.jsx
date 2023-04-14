@@ -45,10 +45,12 @@ class Album extends Component {
             { albumMusics.slice(1).map(({
               trackName,
               previewUrl,
+              trackId,
             }) => (
               <MusicCard
                 key={ trackName }
                 trackName={ trackName }
+                trackId={ trackId }
                 previewUrl={ previewUrl }
               />
             )) }
