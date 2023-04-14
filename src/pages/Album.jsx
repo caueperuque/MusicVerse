@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard/MusicCard';
+import Loading from '../components/Loading/Loading';
 
 class Album extends Component {
   state = {
     bandName: '',
     albumName: '',
     albumMusics: '',
+    isLoading: false,
   };
 
   async componentDidMount() {
@@ -25,7 +27,7 @@ class Album extends Component {
   }
 
   render() {
-    const { bandName, albumName, albumMusics } = this.state;
+    const { bandName, albumName, albumMusics, isLoading } = this.state;
     return (
 
       <div data-testid="page-album">
@@ -40,20 +42,26 @@ class Album extends Component {
             </h2>
           </div>
         )}
-        { albumMusics && (
-          <div key={ Math.random() }>
-            { albumMusics.slice(1).map(({
-              trackName,
-              previewUrl,
-              trackId,
-            }) => (
-              <MusicCard
-                key={ trackName }
-                trackName={ trackName }
-                trackId={ trackId }
-                previewUrl={ previewUrl }
-              />
-            )) }
+        { isLoading ? (
+          <Loading />
+        ) : (
+          <div>
+            { albumMusics && (
+              <div key={ Math.random() }>
+                { albumMusics.slice(1).map(({
+                  trackName,
+                  previewUrl,
+                  trackId,
+                }) => (
+                  <MusicCard
+                    key={ trackName }
+                    trackName={ trackName }
+                    trackId={ trackId }
+                    previewUrl={ previewUrl }
+                  />
+                )) }
+              </div>
+            ) }
           </div>
         ) }
       </div>
