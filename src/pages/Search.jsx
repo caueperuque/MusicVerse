@@ -96,21 +96,28 @@ class Search extends Component {
                   collectionId,
                   collectionName,
                   artworkUrl100,
-                }) => (
+                }, index) => (
                   <>
                     <img
                       key={ collectionId }
                       src={ artworkUrl100 }
                       alt={ `Imagem do album ${collectionName} de ${artistName}` }
                     />
-                    <h3>
+                    <h3
+                      key={ collectionName }
+                    >
                       { collectionName }
                     </h3>
-                    <p>
+                    <p
+                      key={ artistName[index] }
+                    >
                       { artistName }
                     </p>
-                    <div>
+                    <div
+                      key={ index }
+                    >
                       <Link
+                        key={ collectionId[index] }
                         to={ `/album/${collectionId}` }
                         data-testid={ `link-to-album-${collectionId}` }
                       >
