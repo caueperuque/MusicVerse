@@ -35,10 +35,13 @@ class MusicCard extends Component {
       this.setState({
         favorite: false,
       });
+    } else if (checked) {
+      await addSong({ trackId });
+      this.setState({
+        favorite: checked,
+      });
     }
-    await addSong({ trackId });
     this.setState({
-      favorite: checked,
       isLoading: false,
     });
   };
