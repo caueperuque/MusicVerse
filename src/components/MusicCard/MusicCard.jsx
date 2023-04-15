@@ -27,16 +27,16 @@ class MusicCard extends Component {
   };
 
   handleChange = async ({ target: { checked } }) => {
-    const { trackId } = this.props;
+    const { trackId, trackName, previewUrl } = this.props;
     this.loading();
     if (!checked) {
-      await removeSong({ trackId });
+      await removeSong({ trackId, trackName, previewUrl });
       this.loading();
       this.setState({
         favorite: false,
       });
     } else if (checked) {
-      await addSong({ trackId });
+      await addSong({ trackId, trackName, previewUrl });
       this.setState({
         favorite: checked,
       });
