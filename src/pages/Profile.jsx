@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../components/Header/Header';
 import { getUser } from '../services/userAPI';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 class Profile extends Component {
   state = {
