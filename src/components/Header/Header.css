@@ -1,0 +1,76 @@
+/* Monocromática:
+#FFA500 (RGB(255, 165, 0))
+#FFE5B2 (RGB(255, 229, 178))
+#FFCE7F (RGB(255, 206, 127))
+#FFB64C (RGB(255, 182, 76))
+#FF9D19 (RGB(255, 157, 25))
+
+
+Complementar:
+#FFA500 (RGB(255, 165, 0))
+#00A5FF (RGB(0, 165, 255))
+#FF8B00 (RGB(255, 139, 0))
+#0078FF (RGB(0, 120, 255))
+#FF7200 (RGB(255, 114, 0))
+
+
+Análoga:
+#FFA500 (RGB(255, 165, 0))
+#FFB319 (RGB(255, 179, 25))
+#FFC732 (RGB(255, 199, 50))
+#FFD94B (RGB(255, 217, 75))
+#FFEB64 (RGB(255, 235, 100)) */
+
+
+#header {
+  padding: 30px;
+  background-color: orange;
+  border-radius: 0;
+}
+
+.navbar {
+  background-color: rgb(255, 165, 0);
+}
+
+.nav__span, #header__title {
+  color: #363636;
+}
+
+.nav__span {
+  font-size: 1.3rem;
+}
+
+.nav__items {
+  width: 60%;
+  /* height: 100%; */
+  text-align: center;
+  /* align-items: center; */
+}
+
+.nav__items:hover {
+  background-color: rgb(255, 176, 30);
+  border-radius: 10px;
+}
+
+#header__section {
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav__container-items {
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
+  align-items: center;
+}
+
+/* .navbar__header {
+  display: flex;
+  justify-content: center;
+} */
+
+
+/* .header__container {
+  display: flex;
+} */
