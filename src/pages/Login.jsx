@@ -55,7 +55,7 @@ class Login extends Component {
             <div className="login__title">
               <h1 className="title is-1">Login</h1>
             </div>
-            <form>
+            <form className="login__form">
 
               <label htmlFor="input-name" className="login__form-label">
                 <FontAwesomeIcon icon={ faUser } />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../components/Header/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading/Loading';
+import './style/Search.css';
 
 class Search extends Component {
   state = {
@@ -69,24 +70,30 @@ class Search extends Component {
           <Loading />
         ) : (
           <>
-            <form>
-              <label htmlFor="input-search">
-                <input
-                  type="text"
-                  name="searchValue"
-                  id="input-search"
-                  data-testid="search-artist-input"
-                  onChange={ this.handleChange }
-                  value={ searchValue }
-                />
-              </label>
-              <button
-                data-testid="search-artist-button"
-                disabled={ isDisable }
-                onClick={ this.handleClick }
-              >
-                Pesquisar
-              </button>
+            <form className="search__form">
+              <section className="search__section">
+                <article className="search__container-input">
+                  <label htmlFor="input-search">
+                    <input
+                      type="text"
+                      name="searchValue"
+                      id="input-search"
+                      className="input"
+                      data-testid="search-artist-input"
+                      onChange={ this.handleChange }
+                      value={ searchValue }
+                    />
+                  </label>
+                  <button
+                    data-testid="search-artist-button"
+                    disabled={ isDisable }
+                    onClick={ this.handleClick }
+                    className="button  is-success"
+                  >
+                    Search
+                  </button>
+                </article>
+              </section>
             </form>
             {returnAPI && returnAPI.length > 0 && (
               <>

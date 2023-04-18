@@ -1,0 +1,10 @@
+.search__container-input {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search__section {
+  display: flex;
+  justify-content: center;
+  /* width: 100%; */
+}
