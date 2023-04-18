@@ -1,3 +1,12 @@
+:root {
+  --bgcolor: #363636;
+  --hcolor: #363636;
+  --fcolor: white;
+  --lColor: #ff9900;
+  --acolor: #ff9900c7;
+  --containercolor: #915803;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -15,7 +24,7 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  background-color: #FFB319;
+  background-color: var(--bgcolor);
   margin: 0;
   padding: 0;
 }

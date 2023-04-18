@@ -38,6 +38,7 @@ Análoga:
   height: 40%;
   justify-content: space-evenly;
   width: 50%;
+  color: var(--fcolor);
 }
 
 .login__form {
@@ -57,5 +58,6 @@ Análoga:
 }
 
 #login__section {
-  background-color: #FFA500;
+  background-color: var(--lColor);
 }
+

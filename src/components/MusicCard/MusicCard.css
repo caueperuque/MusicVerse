@@ -1,0 +1,25 @@
+.musics__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+  /* border: solid red 2px; */
+  padding: 10px;
+}
+
+.musics__container-audio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+audio {
+  margin-right: 10px;
+  width: 50vh;
+}
+
+
+
+

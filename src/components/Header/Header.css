@@ -24,7 +24,7 @@ Análoga:
 
 #header {
   padding: 30px;
-  background-color: orange;
+  background-color: #FF8B00;
   border-radius: 0;
 }
 
@@ -53,7 +53,7 @@ Análoga:
 }
 
 #header__section {
-  background-color: orange;
+  background-color: #FF8B00;
   display: flex;
   justify-content: space-between;
 }
