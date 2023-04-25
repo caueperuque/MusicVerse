@@ -4,6 +4,7 @@ import Header from '../components/Header/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading/Loading';
 import './style/Search.css';
+import InputSearch from '../components/InputSearch/InputSearch';
 
 class Search extends Component {
   state = {
@@ -66,25 +67,17 @@ class Search extends Component {
     return (
       <div data-testid="page-search">
         <Header />
-        { isLoading ? (
+        {isLoading ? (
           <Loading />
         ) : (
           <>
             <form className="search__form">
               <section className="search__section">
                 <article className="search__container-input">
-                  <label htmlFor="input-search">
-                    <input
-                      type="text"
-                      name="searchValue"
-                      id="input-search"
-                      className="input"
-                      placeholder="Search for songs..."
-                      data-testid="search-artist-input"
-                      onChange={ this.handleChange }
-                      value={ searchValue }
-                    />
-                  </label>
+                  <InputSearch
+                    handleChange={ this.handleChange }
+                    value={ searchValue }
+                  />
                   <button
                     data-testid="search-artist-button"
                     disabled={ isDisable }
@@ -96,53 +89,50 @@ class Search extends Component {
                 </article>
               </section>
             </form>
+
             {returnAPI && returnAPI.length > 0 && (
               <section className="search__container-albums">
                 <div className="search__container-text-results">
-                  <p className="subtitle">
+                  <p
+                    className="subtitle"
+                  >
                     {`Resultado de álbuns de: ${savedNameArtist} `}
                   </p>
                 </div>
                 <article className="search__container-albums-card">
-                  { returnAPI.map(({
-                    artistName,
-                    collectionId,
-                    collectionName,
-                    artworkUrl100,
-                  }, index) => (
-                    <article key={ Math.random() } className="box search__album-card">
-                      <img
-                        key={ collectionId }
-                        src={ artworkUrl100.replaceAll('100x100bb', '200x200bb') }
-                        alt={ `Imagem do album ${collectionName} de ${artistName}` }
-                        className="search__album-image"
-                      />
-                      <h3
-                        className="search__album-card-text subtitle"
-                        key={ collectionName }
-                      >
-                        {` ${collectionName}  🎵`}
-                      </h3>
-                      <p
-                        className="search__album-card-text"
-                        key={ artistName[index] }
-                      >
-                        { artistName }
-                      </p>
-                      <div
-                        className="search__album-card-text"
-                        key={ index }
-                      >
-                        <Link
-                          key={ collectionId[index] }
-                          to={ `/album/${collectionId}` }
-                          data-testid={ `link-to-album-${collectionId}` }
+                  {returnAPI.map(
+                    (
+                      { artistName, collectionId, collectionName, artworkUrl100 },
+                      index,
+                    ) => (
+                      <article key={ Math.random() } className="box search__album-card">
+                        <img
+                          key={ collectionId }
+                          src={ artworkUrl100.replaceAll('100x100bb', '200x200bb') }
+                          alt={ `Imagem do album ${collectionName} de ${artistName}` }
+                          className="search__album-image"
+                        />
+                        <h3
+                          className="search__album-card-text subtitle"
+                          key={ collectionName }
                         >
-                          Clique aqui para acessar o albúm
-                        </Link>
-                      </div>
-                    </article>
-                  ))}
+                          {` ${collectionName}  🎵`}
+                        </h3>
+                        <p className="search__album-card-text" key={ artistName[index] }>
+                          {artistName}
+                        </p>
+                        <div className="search__album-card-text" key={ index }>
+                          <Link
+                            key={ collectionId[index] }
+                            to={ `/album/${collectionId}` }
+                            data-testid={ `link-to-album-${collectionId}` }
+                          >
+                            Clique aqui para acessar o albúm
+                          </Link>
+                        </div>
+                      </article>
+                    ),
+                  )}
                 </article>
               </section>
             )}

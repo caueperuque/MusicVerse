@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
 import Loading from '../Loading/Loading';
 import './MusicCard.css';
@@ -83,7 +81,13 @@ class MusicCard extends Component {
                     color: favorite ? 'red' : 'white',
                   } }
                 /> */}
-                { favorite ? <i className="fa-solid fa-heart" id="teste" /> : <i className="fa-regular fa-heart" /> }
+                {
+                  favorite ? <i
+                    className="fa-solid
+                    fa-heart"
+                    id="teste"
+                  /> : <i className="fa-regular fa-heart" />
+                }
                 {/* <i class="fa-regular fa-heart"/> */}
               </label>
             </div>
