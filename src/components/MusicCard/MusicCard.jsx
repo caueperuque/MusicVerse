@@ -76,13 +76,15 @@ class MusicCard extends Component {
                   onChange={ this.handleChange }
                   checked={ favorite }
                 />
-                <FontAwesomeIcon
+                {/* <FontAwesomeIcon
                   icon={ faHeart }
                   className={ `icon ${favorite ? 'checked' : ''}` }
                   style={ {
-                    color: favorite ? 'red' : 'black',
+                    color: favorite ? 'red' : 'white',
                   } }
-                />
+                /> */}
+                { favorite ? <i className="fa-solid fa-heart" id="teste" /> : <i className="fa-regular fa-heart" /> }
+                {/* <i class="fa-regular fa-heart"/> */}
               </label>
             </div>
           </article>
