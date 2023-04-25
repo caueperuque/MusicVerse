@@ -127,7 +127,7 @@ class Search extends Component {
                             to={ `/album/${collectionId}` }
                             data-testid={ `link-to-album-${collectionId}` }
                           >
-                            Clique aqui para acessar o albúm
+                            Click here to access the album
                           </Link>
                         </div>
                       </article>
