@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../components/Header/Header';
 import { getUser } from '../services/userAPI';
+import './style/Profile.css';
 
 class Profile extends Component {
   state = {
@@ -27,19 +28,33 @@ class Profile extends Component {
       <div data-testid="page-profile">
         <Header />
         { loading && (
-          <div>
-            <img src={ image } alt={ `imagem de ${name}` } data-testid="profile-image" />
-            <p>
-              {name}
-            </p>
-            <p>
-              {email}
-            </p>
-            <p>
-              {description}
-            </p>
-            <Link to="/profile/edit">Editar perfil</Link>
-          </div>
+          <section id="profile__container-main">
+            <article className="box" id="profile__subcontainer">
+              <div className="profile__container-img-desc">
+                <div className="profile__img-email">
+                  <img
+                    src={ image }
+                    alt={ `imagem de ${name}` }
+                    className="profile__image"
+                    data-testid="profile-image"
+                  />
+                  <p>
+                    {name}
+                  </p>
+                  <p>
+                    {email}
+                  </p>
+                </div>
+                <hr id="profile__bar" />
+                <p id="profile__container-desc">
+                  {description}
+                </p>
+              </div>
+              <div id="profile__link">
+                <Link to="/profile/edit" className="button">Editar perfil</Link>
+              </div>
+            </article>
+          </section>
         ) }
       </div>
 

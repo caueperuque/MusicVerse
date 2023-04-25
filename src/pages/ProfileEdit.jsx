@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header/Header';
 import { getUser, updateUser } from '../services/userAPI';
+import './style/ProfileEdit.css';
 
 class ProfileEdit extends Component {
   state = {
@@ -67,63 +68,73 @@ class ProfileEdit extends Component {
         <Header />
         { !isLoading && (
           <>
-            <h1>Editar perfil</h1>
-            <form>
-              <label htmlFor="input-name">
-                Alterar nome:
-                <input
-                  data-testid="edit-input-name"
-                  type="text"
-                  name="name"
-                  id="input-name"
-                  value={ name }
-                  onChange={ this.handleChange }
-                />
-              </label>
-              <label htmlFor="input-email">
-                Alterar email:
-                <input
-                  data-testid="edit-input-email"
-                  type="email"
-                  name="email"
-                  id="input-email"
-                  // placeholder={ email }
-                  value={ email }
-                  onChange={ this.handleChange }
+            <div className="album__title">
+              <h1 className="subtitle is-3">Editar perfil</h1>
+            </div>
+            <section id="profileEdit__container-main">
+              <form className="box" id="profileEdit__subcontainer">
+                <label htmlFor="input-name">
+                  Alterar nome:
+                  <input
+                    data-testid="edit-input-name"
+                    type="text"
+                    name="name"
+                    id="input-name"
+                    className="input"
+                    value={ name }
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="input-email">
+                  Alterar email:
+                  <input
+                    data-testid="edit-input-email"
+                    type="email"
+                    name="email"
+                    id="input-email"
+                    className="input"
+                    // placeholder={ email }
+                    value={ email }
+                    onChange={ this.handleChange }
 
-                />
-              </label>
-              <label htmlFor="input-description">
-                Alterar sua descrição:
-                <input
-                  data-testid="edit-input-description"
-                  type="text"
-                  name="description"
-                  id="input-description"
-                  // placeholder={ description }
-                  value={ description }
-                  onChange={ this.handleChange }
-                />
-              </label>
-              <label htmlFor="input-image">
-                Alterar sua foto de perfil:
-                <input
-                  data-testid="edit-input-image"
-                  type="text"
-                  name="image"
-                  id="input-image"
-                  value={ image }
-                  onChange={ this.handleChange }
-                />
-              </label>
-              <button
-                data-testid="edit-button-save"
-                disabled={ isDisable }
-                onClick={ this.handleClick }
-              >
-                Salvar
-              </button>
-            </form>
+                  />
+                </label>
+                <label htmlFor="input-description">
+                  Alterar sua descrição:
+                  <input
+                    data-testid="edit-input-description"
+                    type="text"
+                    name="description"
+                    id="input-description"
+                    className="input"
+                    // placeholder={ description }
+                    value={ description }
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="input-image">
+                  Alterar sua foto de perfil:
+                  <input
+                    data-testid="edit-input-image"
+                    type="text"
+                    name="image"
+                    id="input-image"
+                    className="input"
+                    value={ image }
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <button
+                  data-testid="edit-button-save"
+                  disabled={ isDisable }
+                  className="button is-success"
+                  onClick={ this.handleClick }
+                >
+                  Salvar
+                </button>
+              </form>
+            </section>
+
           </>
         )}
       </div>
