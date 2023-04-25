@@ -17,11 +17,15 @@
 
 audio {
   margin-right: 10px;
-  width: 50vh;
+  width: 60vw;
 }
 
 #teste {
   color: red;
 }
 
-
+/* @media screen and (max-width: 600px) {
+  audio {
+    width: 20vh;
+  }
+} */

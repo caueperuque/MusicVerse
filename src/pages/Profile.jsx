@@ -51,7 +51,7 @@ class Profile extends Component {
                 </p>
               </div>
               <div id="profile__link">
-                <Link to="/profile/edit" className="button">Editar perfil</Link>
+                <Link to="/profile/edit" className="button">Edit Profile</Link>
               </div>
             </article>
           </section>

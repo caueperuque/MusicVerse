@@ -69,12 +69,12 @@ class ProfileEdit extends Component {
         { !isLoading && (
           <>
             <div className="album__title">
-              <h1 className="subtitle is-3">Editar perfil</h1>
+              <h1 className="subtitle is-3">Edit Profile</h1>
             </div>
             <section id="profileEdit__container-main">
               <form className="box" id="profileEdit__subcontainer">
                 <label htmlFor="input-name">
-                  Alterar nome:
+                  Change name:
                   <input
                     data-testid="edit-input-name"
                     type="text"
@@ -86,7 +86,7 @@ class ProfileEdit extends Component {
                   />
                 </label>
                 <label htmlFor="input-email">
-                  Alterar email:
+                  Change email:
                   <input
                     data-testid="edit-input-email"
                     type="email"
@@ -100,7 +100,7 @@ class ProfileEdit extends Component {
                   />
                 </label>
                 <label htmlFor="input-description">
-                  Alterar sua descrição:
+                  Change your description:
                   <input
                     data-testid="edit-input-description"
                     type="text"
@@ -113,7 +113,7 @@ class ProfileEdit extends Component {
                   />
                 </label>
                 <label htmlFor="input-image">
-                  Alterar sua foto de perfil:
+                  Change your profile picture:
                   <input
                     data-testid="edit-input-image"
                     type="text"

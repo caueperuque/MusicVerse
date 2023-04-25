@@ -79,6 +79,7 @@ class Search extends Component {
                       name="searchValue"
                       id="input-search"
                       className="input"
+                      placeholder="Search for songs..."
                       data-testid="search-artist-input"
                       onChange={ this.handleChange }
                       value={ searchValue }

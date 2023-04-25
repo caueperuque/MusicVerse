@@ -64,7 +64,7 @@ class Login extends Component {
                   name="valueName"
                   id="input-name"
                   data-testid="login-name-input"
-                  placeholder="Usuário"
+                  placeholder="User"
                   onChange={ this.handleChange }
                   className="login__input input"
                 />
@@ -76,7 +76,7 @@ class Login extends Component {
                 onClick={ this.handleClick }
                 className="button is-success"
               >
-                Entrar
+                Sign in
               </button>
 
             </form>
