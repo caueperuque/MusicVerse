@@ -34,7 +34,7 @@ class Profile extends Component {
                 <div className="profile__img-email">
                   <img
                     src={ image }
-                    alt={ `imagem de ${name}` }
+                    alt={ `${name}` }
                     className="profile__image"
                     data-testid="profile-image"
                   />

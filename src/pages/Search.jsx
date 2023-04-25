@@ -96,7 +96,7 @@ class Search extends Component {
                   <p
                     className="subtitle"
                   >
-                    {`Resultado de álbuns de: ${savedNameArtist} `}
+                    {`Album result: ${savedNameArtist} `}
                   </p>
                 </div>
                 <article className="search__container-albums-card">
@@ -139,7 +139,7 @@ class Search extends Component {
 
             {!hasAlbum && returnAPI && returnAPI.length === 0 && (
               <div className="search__container-albuns">
-                <p>Nenhum álbum foi encontrado</p>
+                <p>No album was found</p>
               </div>
             )}
           </>

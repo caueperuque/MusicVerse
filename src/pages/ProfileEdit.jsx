@@ -130,7 +130,7 @@ class ProfileEdit extends Component {
                   className="button is-success"
                   onClick={ this.handleClick }
                 >
-                  Salvar
+                  Save
                 </button>
               </form>
             </section>
