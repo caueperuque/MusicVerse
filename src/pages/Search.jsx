@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../components/Header/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 import Loading from '../components/Loading/Loading';
+import './style/Search.css';
 
 class Search extends Component {
   state = {
@@ -69,67 +70,87 @@ class Search extends Component {
           <Loading />
         ) : (
           <>
-            <form>
-              <label htmlFor="input-search">
-                <input
-                  type="text"
-                  name="searchValue"
-                  id="input-search"
-                  data-testid="search-artist-input"
-                  onChange={ this.handleChange }
-                  value={ searchValue }
-                />
-              </label>
-              <button
-                data-testid="search-artist-button"
-                disabled={ isDisable }
-                onClick={ this.handleClick }
-              >
-                Pesquisar
-              </button>
+            <form className="search__form">
+              <section className="search__section">
+                <article className="search__container-input">
+                  <label htmlFor="input-search">
+                    <input
+                      type="text"
+                      name="searchValue"
+                      id="input-search"
+                      className="input"
+                      placeholder="Search for songs..."
+                      data-testid="search-artist-input"
+                      onChange={ this.handleChange }
+                      value={ searchValue }
+                    />
+                  </label>
+                  <button
+                    data-testid="search-artist-button"
+                    disabled={ isDisable }
+                    onClick={ this.handleClick }
+                    className="button  is-success"
+                  >
+                    Search
+                  </button>
+                </article>
+              </section>
             </form>
             {returnAPI && returnAPI.length > 0 && (
-              <>
-                <p>{`Resultado de álbuns de: ${savedNameArtist} `}</p>
-                { returnAPI.map(({
-                  artistName,
-                  collectionId,
-                  collectionName,
-                  artworkUrl100,
-                }, index) => (
-                  <>
-                    <img
-                      key={ collectionId }
-                      src={ artworkUrl100 }
-                      alt={ `Imagem do album ${collectionName} de ${artistName}` }
-                    />
-                    <h3
-                      key={ collectionName }
-                    >
-                      { collectionName }
-                    </h3>
-                    <p
-                      key={ artistName[index] }
-                    >
-                      { artistName }
-                    </p>
-                    <div
-                      key={ index }
-                    >
-                      <Link
-                        key={ collectionId[index] }
-                        to={ `/album/${collectionId}` }
-                        data-testid={ `link-to-album-${collectionId}` }
+              <section className="search__container-albums">
+                <div className="search__container-text-results">
+                  <p className="subtitle">
+                    {`Resultado de álbuns de: ${savedNameArtist} `}
+                  </p>
+                </div>
+                <article className="search__container-albums-card">
+                  { returnAPI.map(({
+                    artistName,
+                    collectionId,
+                    collectionName,
+                    artworkUrl100,
+                  }, index) => (
+                    <article key={ Math.random() } className="box search__album-card">
+                      <img
+                        key={ collectionId }
+                        src={ artworkUrl100.replaceAll('100x100bb', '200x200bb') }
+                        alt={ `Imagem do album ${collectionName} de ${artistName}` }
+                        className="search__album-image"
+                      />
+                      <h3
+                        className="search__album-card-text subtitle"
+                        key={ collectionName }
                       >
-                        Clique aqui para acessar o albúm
-                      </Link>
-                    </div>
-                  </>
-                ))}
-              </>
+                        {` ${collectionName}  🎵`}
+                      </h3>
+                      <p
+                        className="search__album-card-text"
+                        key={ artistName[index] }
+                      >
+                        { artistName }
+                      </p>
+                      <div
+                        className="search__album-card-text"
+                        key={ index }
+                      >
+                        <Link
+                          key={ collectionId[index] }
+                          to={ `/album/${collectionId}` }
+                          data-testid={ `link-to-album-${collectionId}` }
+                        >
+                          Clique aqui para acessar o albúm
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
+                </article>
+              </section>
             )}
+
             {!hasAlbum && returnAPI && returnAPI.length === 0 && (
-              <p>Nenhum álbum foi encontrado</p>
+              <div className="search__container-albuns">
+                <p>Nenhum álbum foi encontrado</p>
+              </div>
             )}
           </>
         )}

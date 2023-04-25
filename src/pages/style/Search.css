@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+.search__container-input {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search__section {
+  display: flex;
+  justify-content: center;
+}
+
+.search__container-albums {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  align-items: center;
+}
+
+.search__container-text-results {
+  margin: 30px 0;
+}
+
+.search__container-albums-card {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  padding: 40px;
+  justify-content: space-around;
+  background-color: var(--containercolor);
+  border-radius: 10px;
+  box-shadow: 0 0 20px #000000;
+}
+
+.search__album-card {
+  width: 20vw;
+  background-color: var(--acolor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: var(--fcolor)
+}
+
+.search__album-image {
+  border-radius: 100%;
+  padding: 10%;
+}
+
+.search__album-card-text {
+  margin: 7px 0;
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--fcolor)
+}

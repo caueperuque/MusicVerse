@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading/Loading';
 import './style/Login.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 class Login extends Component {
   state = {
@@ -51,22 +51,22 @@ class Login extends Component {
         { isLoading ? (
           <Loading />
         ) : (
-          <section className="login__section-form box">
-            <div className='login__title'>
+          <section className="login__section-form box" id="login__section">
+            <div className="login__title">
               <h1 className="title is-1">Login</h1>
             </div>
-            <form >
+            <form className="login__form">
 
-              <label htmlFor="input-name" className='login__form-label'>
-                <FontAwesomeIcon icon={faUser} />
+              <label htmlFor="input-name" className="login__form-label">
+                <FontAwesomeIcon icon={ faUser } />
                 <input
                   type="text"
                   name="valueName"
                   id="input-name"
                   data-testid="login-name-input"
-                  placeholder="Usuário"
+                  placeholder="User"
                   onChange={ this.handleChange }
-                  className='login__input'
+                  className="login__input input"
                 />
               </label>
 
@@ -74,9 +74,9 @@ class Login extends Component {
                 data-testid="login-submit-button"
                 disabled={ isDisable }
                 onClick={ this.handleClick }
-                className='button is-success is-small'
+                className="button is-success"
               >
-                Entrar
+                Sign in
               </button>
 
             </form>

@@ -1,0 +1,19 @@
+#profileEdit__container-main {
+  /* border: solid red 3px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  justify-content: center;
+}
+
+#profileEdit__subcontainer {
+  background-color: #474747;
+  color: white;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
