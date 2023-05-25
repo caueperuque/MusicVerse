@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import { getUser } from '../../services/userAPI';
 import Loading from '../Loading/Loading';
+import './Header.css';
+import NavBar from '../NavBar/NavBar';
 
 class Header extends Component {
   state = {
@@ -20,21 +21,33 @@ class Header extends Component {
   render() {
     const { user, isLoading } = this.state;
     return (
-      <header data-testid="header-component">
+      <header data-testid="header-component" className="box" id="header">
 
         {
           isLoading ? (
             <Loading />
           ) : (
-            <h2 data-testid="header-user-name">
-              { user }
-            </h2>
+            <section id="header__section">
+              <div>
+                <h2
+                  data-testid="header-user-name"
+                  className="title is-4"
+                  id="header__title"
+                >
+                  {`Welcome,
+                  ${user}
+                  !`}
+                </h2>
+              </div>
+              <article className="header__container">
+                <NavBar />
+              </article>
+              {/* <hr /> */}
 
+            </section>
           )
         }
-        <Link to="/search" data-testid="link-to-search">Search</Link>
-        <Link to="/favorites" data-testid="link-to-favorites">Favorites</Link>
-        <Link to="/profile" data-testid="link-to-profile">Profile</Link>
+
       </header>
     );
   }

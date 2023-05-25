@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { addSong, getFavoriteSongs, removeSong } from '../../services/favoriteSongsAPI';
 import Loading from '../Loading/Loading';
+import './MusicCard.css';
 
 class MusicCard extends Component {
   state = {
@@ -17,7 +18,6 @@ class MusicCard extends Component {
       isLoading: false,
       favorite: result.some((id) => id.trackId === trackId),
     });
-    // console.log(result);
   }
 
   loading = () => {
@@ -51,33 +51,50 @@ class MusicCard extends Component {
     const { favorite, isLoading } = this.state;
     return (
 
-      <div>
+      <section>
         { isLoading ? (
           <Loading />
         ) : (
-          <div>
+          <article className="musics__container">
             <h3>{trackName}</h3>
-            <audio data-testid="audio-component" src={ previewUrl } controls>
-              <track kind="captions" />
-              O seu navegador não suporta o elemento
-              <code>audio</code>
-              .
-            </audio>
-            <label htmlFor="favorite-input">
-              Favorita
-              <input
-                data-testid={ `checkbox-music-${trackId}` }
-                type="checkbox"
-                name="favorite"
-                id="favorite-input"
-                onChange={ this.handleChange }
-                checked={ favorite }
-              />
-            </label>
-          </div>
+            <div className="musics__container-audio">
+              <audio data-testid="audio-component" src={ previewUrl } controls>
+                <track kind="captions" />
+                O seu navegador não suporta o elemento
+                <code>audio</code>
+                .
+              </audio>
+              <label htmlFor={ `favorite-input ${trackId}` }>
+                <input
+                  style={ { display: 'none' } }
+                  data-testid={ `checkbox-music-${trackId}` }
+                  type="checkbox"
+                  name="favorite"
+                  id={ `favorite-input ${trackId}` }
+                  onChange={ this.handleChange }
+                  checked={ favorite }
+                />
+                {/* <FontAwesomeIcon
+                  icon={ faHeart }
+                  className={ `icon ${favorite ? 'checked' : ''}` }
+                  style={ {
+                    color: favorite ? 'red' : 'white',
+                  } }
+                /> */}
+                {
+                  favorite ? <i
+                    className="fa-solid
+                    fa-heart"
+                    id="teste"
+                  /> : <i className="fa-regular fa-heart" />
+                }
+                {/* <i class="fa-regular fa-heart"/> */}
+              </label>
+            </div>
+          </article>
         )}
 
-      </div>
+      </section>
 
     );
   }

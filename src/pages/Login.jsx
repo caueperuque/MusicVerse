@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading/Loading';
+import './style/Login.css';
 
 class Login extends Component {
   state = {
@@ -44,32 +47,40 @@ class Login extends Component {
   render() {
     const { isDisable, isLoading } = this.state;
     return (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className="login__container">
         { isLoading ? (
           <Loading />
         ) : (
-          <form>
+          <section className="login__section-form box" id="login__section">
+            <div className="login__title">
+              <h1 className="title is-1">Login</h1>
+            </div>
+            <form className="login__form">
 
-            <label htmlFor="input-name">
-              Nome:
-              <input
-                type="text"
-                name="valueName"
-                id="input-name"
-                data-testid="login-name-input"
-                onChange={ this.handleChange }
-              />
-            </label>
+              <label htmlFor="input-name" className="login__form-label">
+                <FontAwesomeIcon icon={ faUser } />
+                <input
+                  type="text"
+                  name="valueName"
+                  id="input-name"
+                  data-testid="login-name-input"
+                  placeholder="User"
+                  onChange={ this.handleChange }
+                  className="login__input input"
+                />
+              </label>
 
-            <button
-              data-testid="login-submit-button"
-              disabled={ isDisable }
-              onClick={ this.handleClick }
-            >
-              Entrar
-            </button>
+              <button
+                data-testid="login-submit-button"
+                disabled={ isDisable }
+                onClick={ this.handleClick }
+                className="button is-success"
+              >
+                Sign in
+              </button>
 
-          </form>
+            </form>
+          </section>
         ) }
 
       </div>

@@ -1,10 +1,34 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# MusicVerse 🎧
+
+MusicVerse foi um projeto desenvolvido por mim durante meus estudos na Trybe. Onde requisitamos a API gratuita do iTunes, e conseguimos pesquisar por nome de bandas e cantores, a pesquisa nos retorna os álbuns e podemos escutar uma prévia da música. Conseguimos também favoritar e editar nosso perfil!
+
+### 🔧 Instalação
+
+Para dar o clone na sua máquina:
+
+```
+git clone git@github.com:caueperuque/MusicVerse.git
+```
+
+Instale as dependências
+
+```
+npm install
+```
+
+Para rodar a aplicação:
+
+```
+npm start
+```
+
+## 🛠️ Construído com
+
+Mencione as ferramentas que você usou para criar seu projeto
+
+* [React]
+* [React Router DOM]
+* [CSS]
+* [API do iTunes] (https://performance-partners.apple.com/search-api)
+
+⌨️ com ❤️ por [Cauê Peruque]😊
