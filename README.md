@@ -22,9 +22,11 @@ Para rodar a aplicação:
 npm start
 ```
 
-## 🛠️ Construído com
+## 🌐 Deploy
 
-Mencione as ferramentas que você usou para criar seu projeto
+https://music-verse.vercel.app/
+
+## 🛠️ Construído com
 
 * [React]
 * [React Router DOM]
