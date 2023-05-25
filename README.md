@@ -29,6 +29,6 @@ Mencione as ferramentas que você usou para criar seu projeto
 * [React]
 * [React Router DOM]
 * [CSS]
-* [API do iTunes] https://performance-partners.apple.com/search-api
+* [API do iTunes] (https://performance-partners.apple.com/search-api)
 
 ⌨️ com ❤️ por [Cauê Peruque]😊
